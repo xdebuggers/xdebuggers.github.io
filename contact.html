@@ -14,6 +14,10 @@
       src="https://kit.fontawesome.com/d8e60bc0b5.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {});
+    </script>
     <title>Contact Us</title>
   </head>
   <body>
@@ -100,45 +104,53 @@
         <h2 class="section-subject">Contact Me</h2>
         <div class="bottom-line"></div>
         <p class="lead">Here is how you can reach me</p>
-        <form method="POST" data-netlify="true" data-netlify-recaptcha="true">
+        <form id="my-form">
           <div class="text-fields">
             <input
+              required
               type="text"
               class="text-input first-name-input"
               placeholder="First Name"
               name="firstname"
+              id="firstname"
             />
             <input
+              required
               type="text"
               class="text-input last-name-input"
               placeholder="Last Name"
               name="lastname"
             />
             <input
+              required
               type="date"
               class="text-input date-input"
               placeholder="Birthday"
               name="birthday"
             />
             <input
+              required
               type="email"
               class="text-input email-input"
               placeholder="Email Address"
               name="email"
             />
             <input
+              required
               type="text"
               class="text-input phone-input"
               placeholder="Phone Number"
               name="phone"
             />
             <input
+              required
               type="text"
               class="text-input subject-input"
               placeholder="Subject"
               name="subject"
             />
             <textarea
+              required
               class="text-input message-input"
               placeholder="Enter Message"
               name="message"
