@@ -187,6 +187,18 @@ body {
   font-family: "Raleway", sans-serif;
   line-height: 1.5;
   background: #efefef; }
+  body #topBtn {
+    text-align: center;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background-color: #f15a24;
+    border: none;
+    cursor: pointer;
+    display: none; }
 
 a {
   color: #181818;

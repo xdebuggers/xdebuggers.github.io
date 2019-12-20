@@ -14,7 +14,6 @@
       src="https://kit.fontawesome.com/d8e60bc0b5.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
       $(document).ready(function() {});
     </script>
@@ -69,19 +68,8 @@
                     </li>
                     <li class="top-li">
                       <a href="experiences.html" class="top-link"
-                        >Experiences <i class="fas fa-angle-down"></i
-                      ></a>
-                      <ul class="in-ul">
-                        <li class="in-li">
-                          <a href="experience1.html">exp #1</a>
-                        </li>
-                        <li class="in-li">
-                          <a href="experience2.html">exp #2</a>
-                        </li>
-                        <li class="in-li">
-                          <a href="experience3.html">exp #3</a>
-                        </li>
-                      </ul>
+                        >Experiences
+                      </a>
                     </li>
                     <li class="top-li">
                       <a href="about.html" class="top-link">About</a>
@@ -104,7 +92,7 @@
         <h2 class="section-subject">Contact Me</h2>
         <div class="bottom-line"></div>
         <p class="lead">Here is how you can reach me</p>
-        <form id="my-form">
+        <form id="my-form" action="https://formspree.io/xrgeenzp" method="POST">
           <div class="text-fields">
             <input
               required
@@ -223,5 +211,56 @@
       </div>
       <p class="copy-right">Copyright &copy; 2019. All right Reserved</p>
     </footer>
+    <button id="topBtn">
+      <i class="fas fa-arrow-up fa-2x"></i>
+    </button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/scrollBtn.js"></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function() {
+        // get the form elements defined in your form HTML above
+
+        var form = document.getElementById("my-form");
+        var button = document.getElementById("my-form-button");
+        var status = document.getElementById("my-form-status");
+
+        // Success and Error functions for after the form is submitted
+
+        function success() {
+          form.reset();
+          button.style = "display: none ";
+          status.innerHTML = "Thanks!";
+        }
+
+        function error() {
+          status.innerHTML = "Oops! There was a problem.";
+        }
+
+        // handle the form submission event
+
+        form.addEventListener("submit", function(ev) {
+          ev.preventDefault();
+          var data = new FormData(form);
+          ajax(form.method, form.action, data, success, error);
+        });
+      });
+
+      // helper function for sending an AJAX request
+
+      function ajax(method, url, data, success, error) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+          if (xhr.status === 200) {
+            success(xhr.response, xhr.responseType);
+          } else {
+            error(xhr.status, xhr.response, xhr.responseType);
+          }
+        };
+        xhr.send(data);
+      }
+    </script>
   </body>
 </html>

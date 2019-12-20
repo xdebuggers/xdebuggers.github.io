@@ -14,6 +14,7 @@
       src="https://kit.fontawesome.com/d8e60bc0b5.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Xdebuggers | We Solve Your Problems</title>
   </head>
   <body>
@@ -75,19 +76,8 @@
                       </li>
                       <li class="top-li">
                         <a href="experiences.html" class="top-link"
-                          >Experiences <i class="fas fa-angle-down"></i
-                        ></a>
-                        <ul class="in-ul">
-                          <li class="in-li">
-                            <a href="experience1.html">exp #1</a>
-                          </li>
-                          <li class="in-li">
-                            <a href="experience2.html">exp #2</a>
-                          </li>
-                          <li class="in-li">
-                            <a href="experience3.html">exp #3</a>
-                          </li>
-                        </ul>
+                          >Experiences
+                        </a>
                       </li>
                       <li class="top-li">
                         <a href="about.html" class="top-link">About</a>
@@ -278,7 +268,12 @@
       </div>
       <p class="copy-right">Copyright &copy; 2019. All right Reserved</p>
     </footer>
-    <script src="js/typewriter.js"></script>
+
+    <button id="topBtn">
+      <i class="fas fa-arrow-up fa-2x"></i>
+    </button>
+    <script src="js/scrollBtn.js"></script>
+    <script src="js/typewriter.js"></script>    
     <script>
       let sliderImages = document.querySelectorAll(".slide"),
         arrowLeft = document.querySelector("#arrow-left"),
